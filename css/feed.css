@@ -1,0 +1,677 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #4fd1c5;
+    --accent-color: #ff69b4;
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --header-background: #e0e7ff;
+    --hover-color: #1964b5;
+    --profile-hover: #ced2d6;
+    --border-color: #888;
+    --input-background: aliceblue;
+    --focus-border-color: royalblue;
+    --comment-background: aliceblue;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 3px solid var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hover-color);
+}
+
+* {
+    font-family: "Lato", sans-serif;
+    ;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--header-background);
+}
+
+header .mainSearch {
+    display: flex;
+    align-items: center;
+}
+
+header .mainSearch .logo {
+    padding: 1rem;
+    font-size: 3rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+header .mainSearch .logo:hover {
+    color: var(--hover-color);
+}
+
+header .mainSearch .searchInput {
+    height: 3rem;
+    border-radius: 1.5rem;
+    padding: 0 1rem;
+    border-color: var(--secondary-color);
+    transition: border-color 0.3s ease;
+
+}
+
+header .mainSearch .searchInput:focus {
+    border: 0.25rem solid var(--focus-border-color);
+}
+
+header .mainNavigation .navigation,
+header .links {
+    display: flex;
+}
+
+header .mainNavigation .navigation>li>a {
+    border-radius: 50%;
+
+    margin: 0 0.35rem;
+    display: flex;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+header .mainNavigation .navigation>li>a:hover {
+    background-color: var(--hover-color);
+    border: 1px solid var(--primary-color);
+}
+
+.navIcons {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.navIcons:hover {
+    color: var(--accent-color);
+}
+
+.bellIcon {
+    position: relative;
+    display: block;
+}
+
+.bellIcon span {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.9rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 5rem;
+}
+
+.leftContent,
+.rightContent {
+    width: 20%;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: auto;
+    height: calc(100vh - 5rem);
+    position: fixed;
+}
+
+/* Left content */
+
+.leftContent {
+    left: 0;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+    transition: width 0.3s;
+    overflow: hidden;
+}
+
+.leftContent:hover {
+    width: 21%;
+    overflow: auto;
+}
+
+.profileLeft {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profileLeft img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.profileLeft img:hover {
+    transform: scale(1.1);
+}
+
+.profileLeft .name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navigationLeft ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigationLeft li {
+    margin: 20px 0;
+}
+
+.navigationLeft a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.navigationLeft a:hover {
+    color: var(--hover-color);
+    background-color: var(--profile-hover);
+}
+
+.navigationLeft a::before {
+    content: '➡️';
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.navigationLeft a:hover::before {
+    transform: rotate(90deg);
+}
+
+/* Right content */
+
+.rightContent {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+    transition: width 0.3s;
+    width: 20%;
+    right: 0;
+    overflow: hidden;
+}
+
+.rightContent:hover {
+    width: 21%;
+    overflow: auto;
+}
+
+.rightContent h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.rightContent ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rightContent li {
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+}
+
+.rightContent a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.rightContent a:hover {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+.rightContent img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+/* Main Content */
+
+.mainContent {
+    width: 40%;
+}
+
+.mainContent .post .postHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainContent .post .postHeader .profileUserInfo {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+/* .mainContent .post .postHeader .profileUserInfo .profileImage {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+} */
+.profileImage {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.mainContent .post .postHeader .profileUserInfo .profileName {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.mainContent .post .postHeader .profileOptions {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContent .post .postHeader .profileOptions:hover {
+    background-color: var(--secondary-color);
+}
+
+.mainContent .post .content .imgWrapper .imgContent {
+    max-width: 100%;
+
+}
+
+.mainContent .post .content .imgWrapper {
+    position: relative;
+}
+
+.mainContent .post .content .imgWrapper .infoIcon {
+    position: absolute;
+    right: 1rem;
+    bottom: -1rem;
+    background-color: grey;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.content .postTitle {
+    padding: 1rem;
+}
+
+.content .readMoreButton {
+    width: 100px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.content .postDescription {
+    padding: 1rem;
+    margin: 0;
+}
+
+.post .reacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reacts .reactsIcon {
+    color: var(--primary-color);
+}
+
+.post .reactActions .actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.post .reactActions .actions .reaction {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+}
+
+.post .reactActions .actions .reaction:hover {
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    border-radius: 1rem;
+}
+
+.post .commentSection {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.post .commentSection .newCommentField {
+    width: 80%;
+    border-radius: 0.25rem;
+    background-color: aliceblue;
+    padding: 0.5rem;
+    border-color: #007bff;
+}
+
+.post .commentSection .newCommentField::placeholder {
+    color: royalblue;
+}
+
+.post .commentSection .newCommentField:focus {
+    border: 3px solid royalblue;
+}
+
+.post .commentSection .newCommentField:hover {
+    background-color: royalblue;
+    width: 85%;
+}
+
+
+/* CSS */
+/* .post .insertCommentButton {
+  padding: 0.6em 1em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #720505;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.post .insertCommentButton:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+} */
+
+/* .post .insertCommentButton::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #007bff;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+} */
+
+
+
+.post .commentSection .insertCommentButton {
+    display: inline-flex;
+    font-family: "Nunito", sans-serif;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4fd1c5;
+    background: linear-gradient(90deg,
+            rgb(92, 157, 237) 0%,
+            rgb(134, 5, 106) 100%);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+
+.post .commentSection .insertCommentButton::before {
+    content: "";
+    border-radius: 50%;
+    min-width: calc(55px + 3px);
+    min-height: calc(55px + 3px);
+    border: 6px solid #f23de08e;
+    box-shadow: 0 0 50px #f23de08e;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.post .commentSection .insertCommentButton:hover,
+.post .commentSection .insertCommentButton:focus {
+    color: #313133;
+    transform: translateY(-2px);
+}
+
+.post .commentSection .insertCommentButton:hover::before,
+.post .commentSection .insertCommentButton:focus::before {
+    opacity: 1;
+}
+
+.post .commentSection .insertCommentButton::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #f23de08e;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+.post .commentSection .insertCommentButton:hover::after,
+.post .commentSection .insertCommentButton:focus::after {
+    animation: none;
+    display: none;
+}
+
+.userComments {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.userComments .profileUserComment {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 1rem;
+    gap: 0.5rem;
+}
+
+.userComments .userCommentText {
+    margin: 0 1rem;
+    border: 1px solid #888;
+    padding: 1rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.userComments .userCommentText .emojiReaction {
+    position: absolute;
+    bottom: 0;
+    right: 0.5rem;
+}
+
+.userComments .userCommentText:hover {
+    animation-name: comment-animation;
+    animation-duration: 3s;
+}
+
+.userComments .commentContent .commentReaction {
+    margin-left: 3rem;
+    color: #888;
+    display: flex;
+    gap: 0.75rem;
+
+}
+
+.userComments .commentContent .commentReaction .commentReactionButton:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Responsive Content  */
+@media (max-width: 768px) {
+
+    .leftContent,
+    .rightContent {
+        display: none;
+
+    }
+
+    .mainContent {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mainNavigation {
+        display: none;
+    }
+
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 75px;
+        height: 75px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes comment-animation {
+    from {
+        left: -2rem;
+    }
+
+    to {
+        left: 0rem;
+    }
+}
