@@ -1,0 +1,141 @@
+:root {
+    --sidebar-bg: #0d7377;
+    --text-color: #ffffff;
+    --hover-bg: #14ffec;
+    --icon-color: #14ffec;
+    --section-bg: rgba(20, 255, 236, 0.1);
+  }
+  
+  .leftSidebar {
+    width: 15rem;
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 130vh;
+    border-radius: 1rem;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .userProfile {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background-color: var(--section-bg);
+    border-radius: 10px;
+  
+    .profileImage {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+  
+      .userName {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+  
+      .settingsLink {
+        color: var(--icon-color);
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        gap: 0.2rem;
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--hover-bg);
+        }
+      }
+    }
+  }
+  
+  .navMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  
+    .navItem {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: var(--hover-bg);
+        color: var(--sidebar-bg);
+      }
+  
+      .navIcon {
+        color: var(--icon-color);
+      }
+    }
+  }
+  
+  .shortcuts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  
+    .sectionTitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--icon-color);
+    }
+  
+    .shortcutItem {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem;
+      border-radius: 8px;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: var(--hover-bg);
+        color: var(--sidebar-bg);
+      }
+  
+      .shortcutIcon {
+        color: var(--icon-color);
+      }
+    }
+  }
+  
+  .logoutSection {
+    margin-top: auto;
+  
+    .logoutLink {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: var(--hover-bg);
+        color: var(--sidebar-bg);
+      }
+  
+      .logoutIcon {
+        color: var(--icon-color);
+      }
+    }
+  }

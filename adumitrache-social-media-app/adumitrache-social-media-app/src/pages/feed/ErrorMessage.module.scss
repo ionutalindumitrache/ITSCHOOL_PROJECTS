@@ -1,0 +1,8 @@
+@import "../feed/colorVar";
+
+.error {
+    color: var(--color-error);
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem 0;
+}

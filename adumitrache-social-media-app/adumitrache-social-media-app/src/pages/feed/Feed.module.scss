@@ -1,0 +1,159 @@
+@import "../feed/colorVar";
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    animation: fadeIn 0.5s ease-in;
+
+    .newsfeed {
+        margin: 0 auto;
+        max-width: 40rem;
+        padding: 0 2rem;
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        
+        /* Make the newsfeed responsive */
+        @media (max-width: 1024px) {
+            max-width: 35rem;
+            padding: 0 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            max-width: 30rem;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 480px) {
+            max-width: 100%;
+            padding: 0 0.5rem;
+        }
+    }
+
+    aside {
+        width: 20rem;
+        background-color: var(--color-sidebar);
+        box-shadow: 0 0 10px var(--color-shadow);
+        border-radius: 8px;
+        height: calc(100vh - 5rem);
+        position: fixed;
+        top: 5rem;
+        transition: all 0.3s ease;
+
+        /* Adjust left and right side layout */
+        &.leftSide {
+            left: 0;
+            animation: slideInFromLeft 0.5s ease;
+            overflow: auto;
+        }
+
+        &.rightSide {
+            right: 0;
+            animation: slideInFromRight 0.5s ease;
+            overflow-y:auto;
+            overflow-x: hidden;
+        }
+
+        /* Hide sidebars on small screens */
+        @media (max-width: 768px) {
+            display: none; /* Hide the sidebars on screens smaller than 768px */
+        }
+
+        @media (max-width: 480px) {
+            width: 100%;
+            position: relative;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.feedEnd {
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Additional Responsive Styling */
+@media (max-width: 1024px) {
+    .mainContainer {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 3rem;
+    }
+
+    .newsfeed {
+        padding: 0 1rem;
+        max-width: 35rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 2rem;
+    }
+
+    .newsfeed {
+        padding: 0 1rem;
+        max-width: 30rem;
+    }
+
+    aside {
+        width: 100%;
+        position: relative;
+        height: auto;
+        margin-bottom: 2rem;
+        display: none; /* Hides the sidebar completely */
+    }
+}
+
+@media (max-width: 480px) {
+    .mainContainer {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+    .newsfeed {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    aside {
+        width: 100%;
+        position: relative;
+        height: auto;
+        margin-bottom: 2rem;
+        display: none; /* Hides the sidebar completely */
+    }
+}

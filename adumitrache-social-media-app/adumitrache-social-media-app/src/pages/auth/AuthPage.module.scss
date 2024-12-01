@@ -1,0 +1,67 @@
+.authPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("https://wallpapers.com/images/hd/flight-4200-x-2608-background-cae9ksle58371n6p.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color-light);
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--color-shadow);
+      max-width: 500px;
+      width: 100%;
+      margin: 1rem;
+  
+      .welcomeSection {
+        text-align: center;
+        margin-bottom: 2rem;
+  
+        .title {
+          font-size: 2rem;
+          color: var(--primary-color);
+          margin-bottom: 0.5rem;
+        }
+  
+        .subtitle {
+          font-size: 1rem;
+          color: var(--text-muted);
+        }
+      }
+  
+      .authFormSection {
+        width: 100%;
+      }
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 600px) {
+    .authPage {
+      padding: 1rem;
+    }
+  
+    .container {
+      padding: 1.5rem;
+  
+      .welcomeSection .title {
+        font-size: 1.8rem;
+      }
+  
+      .welcomeSection .subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  }

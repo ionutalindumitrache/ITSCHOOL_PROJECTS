@@ -1,0 +1,67 @@
+.notFoundContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+      url("/assets/images/airplane-bg.jpg") no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+  
+    .errorContent {
+      max-width: 600px;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  
+      h1 {
+        font-size: 6rem;
+        margin: 0;
+        color: var(--accent-color);
+      }
+  
+      h2 {
+        font-size: 2rem;
+        margin: 1rem 0;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: var(--text-light);
+      }
+  
+      .homeLink {
+        color: var(--primary-color);
+        background-color: var(--accent-color);
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: var(--primary-color);
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .errorContent h1 {
+      font-size: 4rem;
+    }
+  
+    .errorContent h2 {
+      font-size: 1.6rem;
+    }
+  
+    .errorContent p {
+      font-size: 1rem;
+    }
+  }
